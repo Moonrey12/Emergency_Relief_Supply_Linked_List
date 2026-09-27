@@ -33,10 +33,23 @@ class LinkedList:
             current = current.next
 
 
+    def search(self, name):
+        current = self.head
+        while current is not None:
+            if current.name.lower() == name.lower():
+                print(f"{current.name} found! Quantity: {current.quantity}")
+                return current
+            current = current.next
+        print(f"{name} not found.")
+        return None
+
 if __name__ == "__main__":
     supplies = LinkedList()
     supplies.insert("Rice", 100)
     supplies.insert("Water", 200)
     supplies.insert("Blankets", 50)
-            
+    supplies.search("Water")
+    supplies.search("Laptop")
+
+    
     supplies.display()
