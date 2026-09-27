@@ -20,9 +20,23 @@ class LinkedList:
             current = current.next
         current.next = new_node
 
+
+    def display(self):
+        if self.head is None:
+            print("No supplies available.")
+            return
+
+        current = self.head
+        print("Current Supplies:")
+        while current is not None:
+            print(f"- {current.name}: {current.quantity}")
+            current = current.next
+
+
 if __name__ == "__main__":
     supplies = LinkedList()
     supplies.insert("Rice", 100)
     supplies.insert("Water", 200)
     supplies.insert("Blankets", 50)
-    print(supplies.head.name, supplies.head.next.name, supplies.head.next.next.name)
+            
+    supplies.display()
