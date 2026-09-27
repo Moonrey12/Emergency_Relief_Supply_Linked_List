@@ -4,8 +4,10 @@ class Node:
         self.quantity = quantity
         self.next = None
 
+class LinkedList:
+    def __init__(self):
+        self.head = None     
+
 if __name__ == "__main__":
-    test_node = Node("Rice", 100)
-    print(test_node.name)
-    print(test_node.quantity)
-    print(test_node.next)        
+    supplies = LinkedList()
+    print(supplies.head)   # None — list is empty
