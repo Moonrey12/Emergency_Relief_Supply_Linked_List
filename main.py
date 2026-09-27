@@ -66,20 +66,38 @@ class LinkedList:
         print(f"{name} not found. Nothing deleted.")
 
 
-if __name__ == "__main__":
+def main():
     supplies = LinkedList()
-    
-    # Insert initial supplies
-    supplies.insert("Rice", 100)
-    supplies.insert("Water", 200)
-    supplies.insert("Blankets", 50)
 
-    print("--- Initial Inventory ---")
-    supplies.display()
+    while True:
+        print("\n========================================")
+        print(" Emergency Relief Supply Management")
+        print("========================================")
+        print("1. Add Supply")
+        print("2. Delete Supply")
+        print("3. Search Supply")
+        print("4. Display Supplies")
+        print("5. Exit")
 
-    print("\n--- Testing Deletions ---")
-    supplies.delete("Rice")       # Delete head
-    supplies.delete("Blankets")   # Delete last
-    supplies.delete("Water")      # Delete remaining item
-    supplies.delete("Medicine")   # Item not in list
-    supplies.delete("Anything")   # Try deleting from empty list
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            name = input("Supply name: ")
+            quantity = int(input("Quantity: "))
+            supplies.insert(name, quantity)
+        elif choice == "2":
+            name = input("Supply name to delete: ")
+            supplies.delete(name)
+        elif choice == "3":
+            name = input("Supply name to search: ")
+            supplies.search(name)
+        elif choice == "4":
+            supplies.display()
+        elif choice == "5":
+            print("Exiting program. Stay safe!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
